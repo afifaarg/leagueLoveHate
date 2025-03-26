@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>League of Legends: Love It or Hate It</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Cinzel:wght@400;700&family=MedievalSharp&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Load Three.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <!-- Load Three.js examples as modules -->
+    <script type="module">
+      import { PointerLockControls } from "https://cdn.jsdelivr.net/npm/three@0.132.2/examples/jsm/controls/PointerLockControls.js";
+      import { Water } from "https://cdn.jsdelivr.net/npm/three@0.132.2/examples/jsm/objects/Water2.js";
+      import { GLTFLoader } from "https://cdn.jsdelivr.net/npm/three@0.132.2/examples/jsm/loaders/GLTFLoader.js";
+
+      // Make them available globally
+      window.THREE = THREE;
+      window.PointerLockControls = PointerLockControls;
+      window.Water = Water;
+      window.GLTFLoader = GLTFLoader;
+    </script>
+  </head>
+  <body>
+    <header class="lol-header">
+      <div class="header-content">
+        <img src="./lol.png" alt="League of Legends Logo" />
+        <h2>10 Reasons to Love It... or Hate It</h2>
+      </div>
+    </header>
+
+    <div class="section-container">
+      <h2 class="section-title">Reasons to LOVE League</h2>
+
+      <!-- Reason 1 -->
+      <section class="reason-section love">
+        <div class="reason-content">
+          <span class="reason-number">Reason 1</span>
+          <p class="reason-text">The thrill of outplaying your opponent</p>
+        </div>
+        <div class="champion-container">
+          <img
+            src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zed_0.jpg"
+            alt="Zed"
+            class="champion-img jump" />
+          <div class="particles" id="particles-1"></div>
+        </div>
+      </section>
+
+      <!-- Reason 2 -->
+      <section class="reason-section love">
+        <div class="reason-content">
+          <span class="reason-number">Reason 2</span>
+          <p class="reason-text">
+            Massive champion diversity (150+ champions!)
+          </p>
+        </div>
+        <div class="champion-container">
+          <img
+            src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Neeko_0.jpg"
+            alt="Neeko"
+            class="champion-img pulse" />
+          <div class="particles" id="particles-2"></div>
+        </div>
+      </section>
+
+      <!-- Reason 3 -->
+      <section class="reason-section love">
+        <div class="reason-content">
+          <span class="reason-number">Reason 3</span>
+          <p class="reason-text">Constant updates keep the game fresh</p>
+        </div>
+        <div class="champion-container">
+          <img
+            src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ezreal_0.jpg"
+            alt="Ezreal"
+            class="champion-img tilt" />
+          <div class="particles" id="particles-3"></div>
+        </div>
+      </section>
+
+      <!-- Reason 4 -->
+      <section class="reason-section love">
+        <div class="reason-content">
+          <span class="reason-number">Reason 4</span>
+          <p class="reason-text">Amazing character designs and lore</p>
+        </div>
+        <div class="champion-container">
+          <img
+            src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kindred_0.jpg"
+            alt="Kindred"
+            class="champion-img" />
+          <div class="particles" id="particles-4"></div>
+        </div>
+      </section>
+
+      <!-- Reason 5 -->
+      <section class="reason-section love">
+        <div class="reason-content">
+          <span class="reason-number">Reason 5</span>
+          <p class="reason-text">Competitive ranked system</p>
+        </div>
+        <div class="champion-container">
+          <img
+            src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jhin_0.jpg"
+            alt="Jhin"
+            class="champion-img" />
+          <div class="particles" id="particles-5"></div>
+        </div>
+      </section>
+
+      <!-- Reason 6 -->
+      <section class="reason-section love">
+        <div class="reason-content">
+          <span class="reason-number">Reason 6</span>
+          <p class="reason-text">Free to play (mostly)</p>
+        </div>
+        <div class="champion-container">
+          <img
+            src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sona_0.jpg"
+            alt="Sona"
+            class="champion-img" />
+          <div class="particles" id="particles-6"></div>
+        </div>
+      </section>
+
+      <!-- Reason 7 -->
+      <section class="reason-section love">
+        <div class="reason-content">
+          <span class="reason-number">Reason 7</span>
+          <p class="reason-text">Global esports scene</p>
+        </div>
+        <div class="champion-container">
+          <img
+            src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/LeeSin_0.jpg"
+            alt="Lee Sin"
+            class="champion-img jump" />
+          <div class="particles" id="particles-7"></div>
+        </div>
+      </section>
+
+      <!-- Reason 8 -->
+      <section class="reason-section love">
+        <div class="reason-content">
+          <span class="reason-number">Reason 8</span>
+          <p class="reason-text">Teamplay and coordination feels amazing</p>
+        </div>
+        <div class="champion-container">
+          <img
+            src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Seraphine_0.jpg"
+            alt="Seraphine"
+            class="champion-img pulse" />
+          <div class="particles" id="particles-8"></div>
+        </div>
+      </section>
+
+      <!-- Reason 9 -->
+      <section class="reason-section love">
+        <div class="reason-content">
+          <span class="reason-number">Reason 9</span>
+          <p class="reason-text">High skill ceiling</p>
+        </div>
+        <div class="champion-container">
+          <img
+            src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Riven_0.jpg"
+            alt="Riven"
+            class="champion-img" />
+          <div class="particles" id="particles-9"></div>
+        </div>
+      </section>
+
+      <!-- Reason 10 -->
+      <section class="reason-section love">
+        <div class="reason-content">
+          <span class="reason-number">Reason 10</span>
+          <p class="reason-text">That feeling when you carry a game</p>
+        </div>
+        <div class="champion-container">
+          <img
+            src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Darius_0.jpg"
+            alt="Darius"
+            class="champion-img pulse" />
+          <div class="particles" id="particles-10"></div>
+        </div>
+      </section>
+
+      <h2 class="section-title">Reasons to HATE League</h2>
+
+      <!-- Reason 1 -->
+      <section class="reason-section hate">
+        <div class="reason-content">
+          <span class="reason-number">Reason 1</span>
+          <p class="reason-text">Toxic community (we've all been there)</p>
+        </div>
+        <div class="champion-container">
+          <img
+            src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Draven_0.jpg"
+            alt="Draven"
+            class="champion-img shake" />
+          <div class="particles" id="particles-11"></div>
+        </div>
+      </section>
+
+      <!-- Reason 2 -->
+      <section class="reason-section hate">
+        <div class="reason-content">
+          <span class="reason-number">Reason 2</span>
+          <p class="reason-text">Addictive nature can consume your life</p>
+        </div>
+        <div class="champion-container">
+          <img
+            src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Viego_0.jpg"
+            alt="Viego"
+            class="champion-img tilt" />
+          <div class="particles" id="particles-12"></div>
+        </div>
+      </section>
+
+      <!-- Reason 3 -->
+      <section class="reason-section hate">
+        <div class="reason-content">
+          <span class="reason-number">Reason 3</span>
+          <p class="reason-text">Unbalanced patches that ruin your main</p>
+        </div>
+        <div class="champion-container">
+          <img
+            src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ryze_0.jpg"
+            alt="Ryze"
+            class="champion-img shake" />
+          <div class="particles" id="particles-13"></div>
+        </div>
+      </section>
+
+      <!-- Reason 4 -->
+      <section class="reason-section hate">
+        <div class="reason-content">
+          <span class="reason-number">Reason 4</span>
+          <p class="reason-text">AFK teammates and trolls</p>
+        </div>
+        <div class="champion-container">
+          <img
+            src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Shaco_0.jpg"
+            alt="Shaco"
+            class="champion-img jump" />
+          <div class="particles" id="particles-14"></div>
+        </div>
+      </section>
+
+      <!-- Reason 5 -->
+      <section class="reason-section hate">
+        <div class="reason-content">
+          <span class="reason-number">Reason 5</span>
+          <p class="reason-text">Steep learning curve for new players</p>
+        </div>
+        <div class="champion-container">
+          <img
+            src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aphelios_0.jpg"
+            alt="Aphelios"
+            class="champion-img spin" />
+          <div class="particles" id="particles-15"></div>
+        </div>
+      </section>
+
+      <!-- Reason 6 -->
+      <section class="reason-section hate">
+        <div class="reason-content">
+          <span class="reason-number">Reason 6</span>
+          <p class="reason-text">Ranked anxiety</p>
+        </div>
+        <div class="champion-container">
+          <img
+            src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yuumi_0.jpg"
+            alt="Yuumi"
+            class="champion-img" />
+          <div class="particles" id="particles-16"></div>
+        </div>
+      </section>
+
+      <!-- Reason 7 -->
+      <section class="reason-section hate">
+        <div class="reason-content">
+          <span class="reason-number">Reason 7</span>
+          <p class="reason-text">Flame and toxicity in chat</p>
+        </div>
+        <div class="champion-container">
+          <img
+            src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Twitch_0.jpg"
+            alt="Twitch"
+            class="champion-img shake" />
+          <div class="particles" id="particles-17"></div>
+        </div>
+      </section>
+
+      <!-- Reason 8 -->
+      <section class="reason-section hate">
+        <div class="reason-content">
+          <span class="reason-number">Reason 8</span>
+          <p class="reason-text">Can't stop playing even when you're tilted</p>
+        </div>
+        <div class="champion-container">
+          <img
+            src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Tryndamere_0.jpg"
+            alt="Tryndamere"
+            class="champion-img tilt" />
+          <div class="particles" id="particles-18"></div>
+        </div>
+      </section>
+
+      <!-- Reason 9 -->
+      <section class="reason-section hate">
+        <div class="reason-content">
+          <span class="reason-number">Reason 9</span>
+          <p class="reason-text">That one champion you just can't stand</p>
+        </div>
+        <div class="champion-container">
+          <img
+            src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Teemo_0.jpg"
+            alt="Teemo"
+            class="champion-img shake" />
+          <div class="particles" id="particles-19"></div>
+        </div>
+      </section>
+
+      <!-- Reason 10 -->
+      <section class="reason-section hate">
+        <div class="reason-content">
+          <span class="reason-number">Reason 10</span>
+          <p class="reason-text">When the enemy team has all the skillshots</p>
+        </div>
+        <div class="champion-container">
+          <img
+            src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Xerath_0.jpg"
+            alt="Xerath"
+            class="champion-img" />
+          <div class="particles" id="particles-20"></div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="lol-footer">
+      <p>
+        Not affiliated with Riot Games. League of Legends and all related media
+        are property of Riot Games. This is a fan-made tribute based on personal
+        experience.
+      </p>
+    </footer>
+
+    <script>
+      // Create particles for each section
+      document.addEventListener("DOMContentLoaded", function () {
+        const particlesContainers = document.querySelectorAll(".particles");
+
+        particlesContainers.forEach((container) => {
+          const isHate = container.closest(".hate") !== null;
+          const particleCount = isHate ? 20 : 30;
+          const particleColor = isHate ? "#ff5555" : "#c8aa6e";
+
+          for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement("div");
+            particle.classList.add("particle");
+
+            // Random size between 2px and 5px
+            const size = Math.random() * 3 + 2;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+
+            // Random position
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 100}%`;
+
+            // Random animation duration between 5s and 15s
+            const duration = Math.random() * 10 + 5;
+            particle.style.animationDuration = `${duration}s`;
+
+            // Random delay
+            particle.style.animationDelay = `${Math.random() * 5}s`;
+
+            // Color
+            particle.style.background = particleColor;
+
+            container.appendChild(particle);
+          }
+        });
+
+        // Add scroll animations
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = "translateY(0)";
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        document.querySelectorAll(".reason-section").forEach((section) => {
+          section.style.opacity = 0;
+          section.style.transform = "translateY(50px)";
+          section.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+          observer.observe(section);
+        });
+      });
+    </script>
+  </body>
+</html>
