@@ -564,4 +564,108 @@
           width: 60px;
         }
       }
+  .friend-shoutout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(200, 170, 110, 0.1);
+  border-radius: 10px;
+  border: 1px solid var(--lol-gold);
+  color: var(--lol-gold);
+  font-family: 'Spiegel', sans-serif;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.friend-shoutout .fa-heart {
+  color: #C53030;
+  animation: heartbeat 1.5s infinite;
+}
+
+.friend-appreciation {
+  margin: 40px 0;
+  padding: 30px;
+  background: linear-gradient(135deg, rgba(10, 20, 40, 0.8) 0%, rgba(28, 40, 54, 0.8) 100%);
+  border-radius: 12px;
+  border: 2px solid var(--lol-gold);
+  position: relative;
+  overflow: hidden;
+}
+
+.friend-appreciation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23C8AA6E" opacity="0.05" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>');
+  background-size: 40px;
+  opacity: 0.3;
+}
+
+.friend-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.friend-icon {
+  font-size: 48px;
+  color: var(--lol-gold);
+  min-width: 60px;
+  text-align: center;
+}
+
+.friend-text h4 {
+  color: var(--lol-gold);
+  font-family: 'Beaufort for Lol', serif;
+  font-size: 24px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.friend-text p {
+  color: #CDBE91;
+  line-height: 1.7;
+  font-size: 16px;
+  text-align: center;
+  margin: 0;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Update the signature text in modal */
+.conclusion-signature .signature-text {
+  white-space: nowrap;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .friend-shoutout {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 14px;
+  }
   
+  .friend-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .friend-text h4 {
+    font-size: 20px;
+  }
+}
